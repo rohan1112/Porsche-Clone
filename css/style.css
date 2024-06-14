@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+}
+#menu {
+  width: 50px;
+}
+#logo {
+  display: flex;
+}
+#logo svg {
+  display: flex;
+  justify-content: center;
+  height: 14px;
+}
+.corousel {
+  height: 583px;
+  width: 1519px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-box {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* Assume 3 images for this example */
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.leftarrow {
+  left: 0;
+  display: block;
+  height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  width: auto;
+  display: none !important;
+}
+.corousel:hover .leftarrow {
+  display: block !important;
+}
+
+.sign {
+  background-color: #fff;
+  box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  color: #313639;
+  display: flex;
+  height: auto;
+  margin: 0;
+  padding: 15px;
+  position: relative;
+  top: 50%;
+}
+.sign:hover {
+  background-color: red;
+  color: white;
+}
+.rightarrow {
+  right: 0;
+  display: block;
+  height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  width: auto;
+  display: none !important;
+}
+.corousel:hover .rightarrow {
+  display: block !important;
+  transition: ease-in-out 4s;
+}
