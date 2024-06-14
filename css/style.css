@@ -22,65 +22,92 @@ body {
   justify-content: center;
   height: 14px;
 }
-.corousel {
+.slide-container {
   height: 583px;
   width: 1519px;
+  position: relative;
+}
+.slide-container .slides {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
-
-.img-box {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%; /* Assume 3 images for this example */
-}
-
-img {
-  height: auto;
-  width: 100%;
-}
-
-.leftarrow {
-  left: 0;
-  display: block;
+.slide-container .slides img {
   height: 100%;
-  padding: 0 10px;
+  width: 100%;
   position: absolute;
+  object-fit: cover;
+  transition: 0.5s ease-in;
+}
+.slide-container .slides img:not(.active) {
   top: 0;
-  width: auto;
+  left: -100%;
+}
+.arrows {
   display: none !important;
 }
-.corousel:hover .leftarrow {
+
+.slide-container:hover .arrows {
   display: block !important;
 }
 
-.sign {
-  background-color: #fff;
-  box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  color: #313639;
-  display: flex;
-  height: auto;
-  margin: 0;
-  padding: 15px;
-  position: relative;
-  top: 50%;
-}
-.sign:hover {
+span.prev:hover,
+span.next:hover {
   background-color: red;
   color: white;
 }
-.rightarrow {
-  right: 0;
-  display: block;
-  height: 100%;
-  padding: 0 10px;
+
+span.next,
+span.prev {
   position: absolute;
-  top: 0;
-  width: auto;
-  display: none !important;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 14px 20px;
+  color: black;
+  background-color: white;
+  /* font-size: 24px; */
+  transition: 0.5s;
+  user-select: none;
+  cursor: pointer;
+  z-index: 4;
 }
-.corousel:hover .rightarrow {
-  display: block !important;
-  transition: ease-in-out 4s;
+span.next {
+  right: 20px;
+}
+span.prev {
+  left: 20px;
+}
+@keyframes next1 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes next2 {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes prev1 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes prev2 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
 }
