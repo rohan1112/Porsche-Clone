@@ -1,4 +1,4 @@
-let imageslider = document.querySelectorAll("img");
+let imageslider = document.querySelectorAll(".slide-img");
 let totalimages = imageslider.length;
 
 var counter = 0;
@@ -29,7 +29,7 @@ function slideprev() {
 }
 
 function autosliding() {
-  deletInterval = setInterval(timer, 1500);
+  deletInterval = setInterval(timer, 2000);
   function timer() {
     slidenext();
   }
