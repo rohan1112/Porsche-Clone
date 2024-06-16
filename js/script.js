@@ -42,3 +42,16 @@ container.addEventListener("mouseover", function () {
 });
 
 container.addEventListener("mouseout", autosliding);
+
+// model search
+
+var arrowbtns = document.querySelectorAll(".card-arrow");
+var corousel = document.querySelector(".corousel");
+var firstCardWidth = corousel.querySelector(".card").offsetWidth;
+
+arrowbtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    corousel.scrollLeft +=
+      btn.id === "card-left" ? -firstCardWidth : firstCardWidth;
+  });
+});
